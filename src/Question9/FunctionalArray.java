@@ -25,6 +25,7 @@ public class FunctionalArray {
                 current = current.getRight();
             }
         }
+        if (current == null) throw new IndexOutOfBoundsException();
         if(index %2 != 0){
             if (current.getLeft() == null){
                 current.setLeft(new BinaryTreeNode(value));
