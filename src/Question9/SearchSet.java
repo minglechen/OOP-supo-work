@@ -63,6 +63,17 @@ public class SearchSet {
         a.insert(2);
         a.insert(7);
         System.out.println(a.contains(7));
+
+        FunctionalArray b =new FunctionalArray(5);
+        b.set(0,1);
+        b.set(1,2);
+        b.set(2,3);
+        b.set(3,4);
+        b.set(4,5);
+
+        for(int i = 0; i< 5; i++){
+            System.out.println(b.get(i));
+        }
     }
 
 
