@@ -7,17 +7,10 @@ public class NinjaEmployee extends Employee implements NinjaInterface{
         ninja.doStuff();
     }
 
-    @Override
-    public void finalize() throws Throwable {
-        super.finalize();
-        System.out.println("deleted");
-    }
+
 
     public static void main(String[] args) {
         NinjaEmployee ninjaEmployee = new NinjaEmployee();
-        for (int i = 0; i < 1000000; i++){
-            ninjaEmployee = new NinjaEmployee();
-        }
         ninjaEmployee.doStuff();
         ninjaEmployee.doStuff2();
 
