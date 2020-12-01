@@ -17,23 +17,23 @@ public class Tests {
         a.insert(5);
         a.insert(2);
         a.insert(7);
-        assert a.contains(7);
-        assert a.contains(5);
-        assert a.contains(2);
-        assert !a.contains(1);
+        assertThat(a.contains(7)).isTrue();
+        assertThat(a.contains(5)).isTrue();
+        assertThat(a.contains(2)).isTrue();
+        assertThat(a.contains(1)).isFalse();
 
     }
 
     @Test
     public void SearchSet_getNumberElements_isCorrect(){
         SearchSet a = new SearchSet();
-        assert a.getNumberElements() == 0;
+        assertThat(a.getNumberElements()).isEqualTo(0);
         a.insert(5);
         a.insert(2);
         a.insert(7);
-        assert a.getNumberElements() == 3;
+        assertThat(a.getNumberElements()).isEqualTo(3);
         a.insert(4);
-        assert a.getNumberElements() == 4;
+        assertThat(a.getNumberElements()).isEqualTo(4);
     }
 
     @Test
@@ -47,7 +47,7 @@ public class Tests {
         b.set(4,5);
 
         for(int i = 0; i< 5; i++){
-            assert b.get(i) == i+1;
+            assertThat(b.get(i)).isEqualTo(i+1);
         }
 
     }
@@ -67,7 +67,7 @@ public class Tests {
         } catch (Exception IndexOutOfBoundsException){
             passed = true;
         } finally {
-            assert passed;
+            assertThat(passed).isTrue();
         }
 
     }
@@ -81,7 +81,7 @@ public class Tests {
         } catch (Exception IndexOutOfBoundsException){
             passed = true;
         } finally {
-            assert passed;
+            assertThat(passed).isTrue();
         }
 
     }
@@ -91,14 +91,14 @@ public class Tests {
         boolean passed = false;
         FunctionalArray b =new FunctionalArray(5);
 
-        assert b.get(4) == 0;
+        assertThat(b.get(4)).isEqualTo(0);
 
         try {
             b.get(5);
         } catch (Exception IndexOutOfBoundsException){
             passed = true;
         } finally {
-            assert passed;
+            assertThat(passed).isTrue();
         }
 
     }
